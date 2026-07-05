@@ -1,0 +1,10 @@
+package com.medicard.repository;
+
+import com.medicard.model.Visit;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface VisitRepository extends JpaRepository<Visit, Long> {
+    List<Visit> findByPatientIdOrderByVisitDateDesc(String patientId);
+}
